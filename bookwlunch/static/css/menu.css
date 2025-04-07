@@ -1,0 +1,64 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    font-family: 'Poppins', Arial, sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  .logo {
+    height: 60px;
+    transition: transform 0.3s ease;
+  }
+  
+  .logo:hover {
+    transform: scale(1.05);
+  }
+  
+  .menu-screen {
+    margin-top: 100px;
+    width: 100%;
+    min-height: 600px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../images/globalassetsbilderheader_webben_februari-2025_1920x600px-crop-1920-600-90-20250226114813.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 15px;
+  }
+  
+  .menu-overlay {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px 60px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+  }
+  
+  .menu-overlay:hover {
+    transform: translateY(-5px);
+  }
+  
+  .menu-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #222;
+  }
+  
+  footer {
+    margin-top: 0 !important;
+    padding-top: 0;
+  }
+  
+  footer a {
+    color: #ccc;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    color: #1e90ff;
+  }
+  

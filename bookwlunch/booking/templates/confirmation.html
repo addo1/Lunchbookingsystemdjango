@@ -1,0 +1,148 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Confirmation - Lunch Menu & Table Booking</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', Arial, sans-serif;
+    }
+
+    body, html {
+      height: 100%;
+      width: 100%;
+      scroll-behavior: smooth;
+      background: url('visitvastmanland-restaurang-varda-toppbid.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .blur-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(8px);
+      background-color: rgba(255, 255, 255, 0.4);
+      z-index: -1;
+    }
+
+    .confirmation-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .confirmation-message {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 30px 50px;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      max-width: 550px;
+      width: 100%;
+    }
+
+    .confirmation-message h1 {
+      font-size: 32px;
+      color: #28a745;
+      margin-bottom: 15px;
+    }
+
+    .confirmation-message p {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .reservation-details {
+      background-color: #f1f1f1;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: left;
+      margin: 20px 0;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    .confirmation-buttons a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 30px;
+      font-size: 16px;
+      text-decoration: none;
+      color: white;
+      border-radius: 10px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .home-button {
+      background-color: #007BFF;
+    }
+
+    .home-button:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+
+    .menu-button {
+      background-color: #28a745;
+    }
+
+    .menu-button:hover {
+      background-color: #218838;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="blur-overlay"></div>
+  <div class="confirmation-container">
+    <div class="confirmation-message">
+      <h1>🎉 Booking Confirmed!</h1>
+      <p>Thank you for booking a table with us.</p>
+      <p>Your reservation details have been successfully saved.</p>
+
+      <div class="reservation-details">
+        <p><strong>Table:</strong> {{ table }}</p>
+        <p><strong>Name:</strong> {{ name }}</p>
+        <p><strong>Email:</strong> {{ email }}</p>
+        <p><strong>Phone:</strong> {{ phone }}</p>
+        <p><strong>Date:</strong> {{ bookingdate }}</p>
+        <p><strong>Start Time:</strong> {{ bookingstart }}</p>
+        <p><strong>End Time:</strong> {{ bookingend }}</p>
+        <p><strong>Chairs:</strong> 4</p>
+    </div>
+
+      <div class="confirmation-buttons">
+        <a href="{% url 'table' %}" class="home-button">Back to Home</a>
+        <a href="{% url 'menu' %}" class="menu-button">View Menu</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.onload = function() {
+      confetti({
+        particleCount: 250,
+        spread: 120,
+        origin: { y: 0.6 },
+      });
+    };
+  </script>
+</body>
+</html>
