@@ -3,6 +3,7 @@
 A web-based system for browsing menus and booking tables at local lunch spots.  
 Built with **Django**, **HTML/CSS**, and **JavaScript**.
 
+🌐 **Live demo:** [https://addo1.pythonanywhere.com](https://addo1.pythonanywhere.com)
 ---
 
 ## 🚀 Features
